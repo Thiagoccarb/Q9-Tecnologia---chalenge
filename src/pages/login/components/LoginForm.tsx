@@ -8,6 +8,14 @@ import { InputAdornment } from '@mui/material';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 
 export default function LoginForm() {
+  const [loginCredentials, setLoginCredentials] = React.useState<{
+    email: string, password: string
+  }>({
+    email: '',
+    password: '',
+  })
+
+  
   return (
     <Grid
       item
