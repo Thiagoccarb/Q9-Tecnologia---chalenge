@@ -6,8 +6,11 @@ import ClearOutlinedIcon from '@mui/icons-material/ClearOutlined';
 import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 import { InputAdornment } from '@mui/material';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
+import VisibilityIcon from '@mui/icons-material/Visibility';
+import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 
 export default function LoginForm() {
+  const [showPassword, setShowPassword] = React.useState<boolean>(false);
   const [loginCredentials, setLoginCredentials] = React.useState<{
     email: string, password: string
   }>({
@@ -51,7 +54,7 @@ export default function LoginForm() {
                     edge='end'
                     onClick={clearEmail}
                   >
-                    <ClearOutlinedIcon/>
+                    <ClearOutlinedIcon />
                   </IconButton>
                 }
               </InputAdornment>
@@ -79,6 +82,8 @@ export default function LoginForm() {
                 <IconButton
                   edge='end'
                 >
+                  {showPassword && <VisibilityIcon />}
+                  {!showPassword && <VisibilityOffIcon />}
                 </IconButton>
               </InputAdornment>
             ),
