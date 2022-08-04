@@ -15,13 +15,22 @@ export default function LoginForm() {
     password: '',
   })
 
-  
+  const handleChange = (e: React.SyntheticEvent) => {
+    const { value, name } = e.target as HTMLInputElement;
+    setLoginCredentials({
+      ...loginCredentials,
+      [name]: value,
+    });
+  }
+
   return (
     <Grid
       item
     >
       <form>
         <TextField
+          onChange={handleChange}
+          value={loginCredentials.email}
           type='text'
           name='email'
           fullWidth
@@ -47,6 +56,8 @@ export default function LoginForm() {
           label='Email'
         />
         <TextField
+          onChange={handleChange}
+          value={loginCredentials.password}
           name='password'
           data-testid='password'
           fullWidth
