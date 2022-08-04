@@ -5,6 +5,7 @@ import TextField from '@mui/material/TextField';
 import ClearOutlinedIcon from '@mui/icons-material/ClearOutlined';
 import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 import { InputAdornment } from '@mui/material';
+import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 
 export default function LoginForm() {
   return (
@@ -36,6 +37,30 @@ export default function LoginForm() {
             ),
           }}
           label='Email'
+        />
+        <TextField
+          name='password'
+          data-testid='password'
+          fullWidth
+          variant='standard'
+          InputProps={{
+            className: 'login',
+            startAdornment: (
+              <InputAdornment position='start'>
+                <LockOutlinedIcon />
+              </InputAdornment>
+            ),
+            endAdornment: (
+              <InputAdornment position='end'>
+
+                <IconButton
+                  edge='end'
+                >
+                </IconButton>
+              </InputAdornment>
+            ),
+          }}
+          label='Password'
         />
       </form>
     </Grid>
