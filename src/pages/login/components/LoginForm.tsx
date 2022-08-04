@@ -28,6 +28,8 @@ export default function LoginForm() {
 
   const clearEmail = () => setLoginCredentials({ ...loginCredentials, email: '' })
 
+  const handlePasswordInputType = () => setShowPassword(!showPassword);
+
   return (
     <Grid
       item
@@ -65,6 +67,7 @@ export default function LoginForm() {
         <TextField
           onChange={handleChange}
           value={loginCredentials.password}
+          type={showPassword ? 'text' : 'password'}
           name='password'
           data-testid='password'
           fullWidth
@@ -81,6 +84,7 @@ export default function LoginForm() {
 
                 <IconButton
                   edge='end'
+                  onClick={handlePasswordInputType}
                 >
                   {showPassword && <VisibilityIcon />}
                   {!showPassword && <VisibilityOffIcon />}
