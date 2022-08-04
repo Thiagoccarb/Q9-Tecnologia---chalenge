@@ -10,8 +10,14 @@ export default function LoginPage() {
       component='section'
       alignItems='center'
       justifyContent='center'
+      flexDirection='column'
       sx={{ margin: 'auto' }}
     >
+      <Grid
+        item
+      >
+        <h1>Login</h1>
+      </Grid>
       <Grid
         item
       >
