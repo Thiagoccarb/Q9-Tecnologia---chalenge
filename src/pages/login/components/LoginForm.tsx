@@ -23,6 +23,8 @@ export default function LoginForm() {
     });
   }
 
+  const clearEmail = () => setLoginCredentials({ ...loginCredentials, email: '' })
+
   return (
     <Grid
       item
@@ -46,8 +48,10 @@ export default function LoginForm() {
               <InputAdornment position='end'>
                 {
                   <IconButton
-                    edge='end'>
-                    <ClearOutlinedIcon />
+                    edge='end'
+                    onClick={clearEmail}
+                  >
+                    <ClearOutlinedIcon/>
                   </IconButton>
                 }
               </InputAdornment>
