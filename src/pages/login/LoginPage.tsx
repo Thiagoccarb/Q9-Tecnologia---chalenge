@@ -15,6 +15,7 @@ export default function LoginPage() {
       flexDirection='column'
       height='100vh'
       sx={{ margin: 'auto' }}
+      rowGap={2}
     >
       <Grid
         item
