@@ -13,16 +13,7 @@ export default function LoginPage() {
       alignItems='center'
       justifyContent='center'
       flexDirection='column'
-      height='400px'
-      width='80vw'
-      sx={{ 
-        margin: 'auto',
-        maxWidth: '800px',
-        position: 'relative',
-        top: '30%',
-        border: '1px solid black',
-        borderRadius: '10px'
-    }}
+      id='login-section'
       rowGap={11}
     >
       <Grid
