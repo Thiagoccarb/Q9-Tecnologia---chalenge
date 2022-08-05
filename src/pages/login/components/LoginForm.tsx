@@ -34,79 +34,80 @@ export default function LoginForm() {
   const handlePasswordInputType = () => setShowPassword(!showPassword);
 
   return (
-    <form
-      style={{
-        width: '80%',
-      }}
-    >
+    <form>
       <Grid
-        item
-        width='100%'
+        container
+        flexDirection='column'
+        rowGap={4}
       >
-        <TextField
-          onChange={handleChange}
-          value={loginCredentials.email}
-          className={loginInputStyles}
-          type='text'
-          name='email'
-          fullWidth
-          data-testid='email'
-          variant='standard'
-          InputProps={{
-            startAdornment: (
-              <InputAdornment position='start'>
-                <EmailOutlinedIcon />
-              </InputAdornment>
-            ),
-            endAdornment: (
-              <InputAdornment position='end'>
-                {
+        <Grid
+          item
+        >
+          <TextField
+            onChange={handleChange}
+            value={loginCredentials.email}
+            className={loginInputStyles}
+            type='text'
+            name='email'
+            fullWidth
+            data-testid='email'
+            variant='standard'
+            InputProps={{
+              startAdornment: (
+                <InputAdornment position='start'>
+                  <EmailOutlinedIcon />
+                </InputAdornment>
+              ),
+              endAdornment: (
+                <InputAdornment position='end'>
+                  {
+                    <IconButton
+                      edge='end'
+                      onClick={clearEmail}
+                    >
+                      <ClearOutlinedIcon />
+                    </IconButton>
+                  }
+                </InputAdornment>
+              ),
+            }}
+            label='Email'
+          />
+        </Grid>
+        <Grid
+          item
+        >
+          <TextField
+            onChange={handleChange}
+            value={loginCredentials.password}
+            type={showPassword ? 'text' : 'password'}
+            className={loginInputStyles}
+            name='password'
+            data-testid='password'
+            fullWidth
+            variant='standard'
+            InputProps={{
+              className: 'login',
+              startAdornment: (
+                <InputAdornment position='start'>
+                  <LockOutlinedIcon />
+                </InputAdornment>
+              ),
+              endAdornment: (
+                <InputAdornment position='end'>
                   <IconButton
                     edge='end'
-                    onClick={clearEmail}
+                    onClick={handlePasswordInputType}
                   >
-                    <ClearOutlinedIcon />
+                    {showPassword && <VisibilityIcon />}
+                    {!showPassword && <VisibilityOffIcon />}
                   </IconButton>
-                }
-              </InputAdornment>
-            ),
-          }}
-          label='Email'
-        />
-      </Grid>
-      <Grid
-        item
-      >
-        <TextField
-          onChange={handleChange}
-          value={loginCredentials.password}
-          type={showPassword ? 'text' : 'password'}
-          className={loginInputStyles}
-          name='password'
-          data-testid='password'
-          fullWidth
-          variant='standard'
-          InputProps={{
-            className: 'login',
-            startAdornment: (
-              <InputAdornment position='start'>
-                <LockOutlinedIcon />
-              </InputAdornment>
-            ),
-            endAdornment: (
-              <InputAdornment position='end'>
-                <IconButton
-                  edge='end'
-                  onClick={handlePasswordInputType}
-                >
-                  {showPassword && <VisibilityIcon />}
-                  {!showPassword && <VisibilityOffIcon />}
-                </IconButton>
-              </InputAdornment>
-            ),
-          }}
-          label='Password'
-        />
+                </InputAdornment>
+              ),
+            }}
+            label='Password'
+          />
+        </Grid>
       </Grid>
     </form>
   );
