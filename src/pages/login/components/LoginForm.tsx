@@ -31,10 +31,9 @@ export default function LoginForm() {
   const handlePasswordInputType = () => setShowPassword(!showPassword);
 
   return (
-    <Grid
-      item
-    >
-      <form>
+    <form>
+      <Grid
+        item>
         <TextField
           onChange={handleChange}
           value={loginCredentials.email}
@@ -64,6 +63,10 @@ export default function LoginForm() {
           }}
           label='Email'
         />
+      </Grid>
+      <Grid
+        item
+      >
         <TextField
           onChange={handleChange}
           value={loginCredentials.password}
@@ -81,7 +84,6 @@ export default function LoginForm() {
             ),
             endAdornment: (
               <InputAdornment position='end'>
-
                 <IconButton
                   edge='end'
                   onClick={handlePasswordInputType}
@@ -94,7 +96,7 @@ export default function LoginForm() {
           }}
           label='Password'
         />
-      </form>
-    </Grid>
+      </Grid>
+    </form>
   );
 }
