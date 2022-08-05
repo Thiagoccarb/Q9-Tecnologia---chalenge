@@ -27,3 +27,11 @@ h6 {
 h1 {
   font-size: 5vmin;
 }
+
+#login-btn-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20px auto;
+  width: 80%;
+}
