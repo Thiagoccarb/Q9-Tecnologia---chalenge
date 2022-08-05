@@ -30,51 +30,61 @@ export default function LoginForm() {
   const clearEmail = () => setEmail('')
 
   return (
-    <form style={{ width: '100%' }} onSubmit={validateEmail} >
-      <Grid
-        container
-        flexDirection='column'
-        margin='auto'
-        width='80%'
-        rowGap={8}
-      >
-        <Grid
-          item
+    <>
+      {
+        error
+        && <div
+          className='error'
         >
-          <TextField
-            error={error}
-            onChange={handleChange}
-            value={email}
-            className={loginInputStyles}
-            type='text'
-            name='email'
-            fullWidth
-            data-testid='email'
-            variant='standard'
-            InputProps={{
-              startAdornment: (
-                <InputAdornment position='start'>
-                  <EmailOutlinedIcon />
-                </InputAdornment>
-              ),
-              endAdornment: (
-                <InputAdornment position='end'>
-                  {
-                    <IconButton
-                      edge='end'
-                      onClick={clearEmail}
-                    >
-                      <ClearOutlinedIcon />
-                    </IconButton>
-                  }
-                </InputAdornment>
-              ),
-            }}
-            label='Email'
-          />
+          <span>Por favor, confira o email digitado e tente novamente</span>
+        </div>
+      }
+      <form style={{ width: '100%' }} onSubmit={validateEmail} >
+        <Grid
+          container
+          flexDirection='column'
+          margin='auto'
+          width='80%'
+          rowGap={8}
+        >
+          <Grid
+            item
+          >
+            <TextField
+              error={error}
+              onChange={handleChange}
+              value={email}
+              className={loginInputStyles}
+              type='text'
+              name='email'
+              fullWidth
+              data-testid='email'
+              variant='standard'
+              InputProps={{
+                startAdornment: (
+                  <InputAdornment position='start'>
+                    <EmailOutlinedIcon />
+                  </InputAdornment>
+                ),
+                endAdornment: (
+                  <InputAdornment position='end'>
+                    {
+                      <IconButton
+                        edge='end'
+                        onClick={clearEmail}
+                      >
+                        <ClearOutlinedIcon />
+                      </IconButton>
+                    }
+                  </InputAdornment>
+                ),
+              }}
+              label='Email'
+            />
+          </Grid>
         </Grid>
-      </Grid>
-      <LoginFormButtons />
-    </form>
+        <LoginFormButtons />
+      </form>
+    </>
   );
 }
