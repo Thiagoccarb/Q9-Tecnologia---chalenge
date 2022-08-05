@@ -5,21 +5,29 @@ import TextField from '@mui/material/TextField';
 import ClearOutlinedIcon from '@mui/icons-material/ClearOutlined';
 import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 import { InputAdornment } from '@mui/material';
-import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
-import VisibilityIcon from '@mui/icons-material/Visibility';
-import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
+// import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
+// import VisibilityIcon from '@mui/icons-material/Visibility';
+// import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 
 import { useStyles } from '../../../styles/styles';
 
 export default function LoginForm() {
   const { loginInputStyles } = useStyles();
-  const [showPassword, setShowPassword] = React.useState<boolean>(false);
+  const [error, setError] = React.useState<boolean>(false);
+  // const [showPassword, setShowPassword] = React.useState<boolean>(false);
   const [loginCredentials, setLoginCredentials] = React.useState<{
     email: string, password: string
   }>({
     email: '',
     password: '',
-  })
+  });
+
+  const emailRegex = /^[a-z0-9.]+@[a-z0-9]+\.[a-z]+.*?[a-z]+/;
+
+  const validateEmail = () => {
+    const isValidEmail = emailRegex.test(loginCredentials.email);
+    setError(!isValidEmail);
+  }
 
   const handleChange = (e: React.SyntheticEvent) => {
     const { value, name } = e.target as HTMLInputElement;
@@ -31,14 +39,14 @@ export default function LoginForm() {
 
   const clearEmail = () => setLoginCredentials({ ...loginCredentials, email: '' })
 
-  const handlePasswordInputType = () => setShowPassword(!showPassword);
+  // const handlePasswordInputType = () => setShowPassword(!showPassword);
 
   return (
-    <form style={{width: '100%'}}>
+    <form style={{ width: '100%' }}>
       <Grid
         container
         flexDirection='column'
-       margin='auto'
+        margin='auto'
         width='80%'
         rowGap={8}
       >
@@ -76,7 +84,7 @@ export default function LoginForm() {
             label='Email'
           />
         </Grid>
-        <Grid
+        {/* <Grid
           item
         >
           <TextField
@@ -109,7 +117,7 @@ export default function LoginForm() {
             }}
             label='Password'
           />
-        </Grid>
+        </Grid> */}
       </Grid>
     </form>
   );
