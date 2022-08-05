@@ -14,7 +14,7 @@ export default function LoginPage() {
       justifyContent='center'
       flexDirection='column'
       id='login-section'
-      rowGap={11}
+      rowGap={7}
     >
       <Grid
         item
