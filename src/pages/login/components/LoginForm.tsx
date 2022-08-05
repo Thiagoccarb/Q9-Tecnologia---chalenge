@@ -34,11 +34,13 @@ export default function LoginForm() {
   const handlePasswordInputType = () => setShowPassword(!showPassword);
 
   return (
-    <form>
+    <form style={{width: '100%'}}>
       <Grid
         container
         flexDirection='column'
-        rowGap={4}
+       margin='auto'
+        width='80%'
+        rowGap={8}
       >
         <Grid
           item
