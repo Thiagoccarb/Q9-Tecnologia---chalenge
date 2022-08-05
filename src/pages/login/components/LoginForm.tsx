@@ -16,7 +16,8 @@ export default function LoginForm() {
 
   const emailRegex = /^[a-z0-9.]+@[a-z0-9]+\.[a-z]+.*?[a-z]+/;
 
-  const validateEmail = () => {
+  const validateEmail = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
     const isValidEmail = emailRegex.test(email);
     setError(!isValidEmail);
   }
@@ -29,7 +30,7 @@ export default function LoginForm() {
   const clearEmail = () => setEmail('')
 
   return (
-    <form style={{ width: '100%' }}>
+    <form style={{ width: '100%' }} onSubmit={validateEmail} >
       <Grid
         container
         flexDirection='column'
@@ -41,6 +42,7 @@ export default function LoginForm() {
           item
         >
           <TextField
+            error={error}
             onChange={handleChange}
             value={email}
             className={loginInputStyles}
