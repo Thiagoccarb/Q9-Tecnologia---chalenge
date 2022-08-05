@@ -34,9 +34,15 @@ export default function LoginForm() {
   const handlePasswordInputType = () => setShowPassword(!showPassword);
 
   return (
-    <form>
+    <form
+      style={{
+        width: '80%',
+      }}
+    >
       <Grid
-        item>
+        item
+        width='100%'
+      >
         <TextField
           onChange={handleChange}
           value={loginCredentials.email}

@@ -13,8 +13,12 @@ export default function LoginPage() {
       alignItems='center'
       justifyContent='center'
       flexDirection='column'
-      height='100vh'
-      sx={{ margin: 'auto' }}
+      height='250px'
+      width='80vw'
+      sx={{ 
+        margin: 'auto',
+        maxWidth: '800px'
+    }}
       rowGap={2}
     >
       <Grid
@@ -24,7 +28,7 @@ export default function LoginPage() {
       </Grid>
       <Grid
         container
-        component='section'
+        component='div'
         justifyContent='center'
       >
         <LoginForm />

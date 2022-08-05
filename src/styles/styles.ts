@@ -7,7 +7,7 @@ export const useStyles = makeStyles({
     },
     '& .MuiInput-root:after': {
       borderBottom: '2px solid #ABA8A8'
-    }
+    },
   },
 });
 
