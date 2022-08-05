@@ -6,6 +6,7 @@ import ClearOutlinedIcon from '@mui/icons-material/ClearOutlined';
 import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 import { InputAdornment } from '@mui/material';
 
+import { LoginFormButtons } from '.';
 import { useStyles } from '../../../styles/styles';
 
 export default function LoginForm() {
@@ -71,6 +72,7 @@ export default function LoginForm() {
           />
         </Grid>
       </Grid>
+      <LoginFormButtons />
     </form>
   );
 }
