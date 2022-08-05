@@ -9,7 +9,10 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 
+import { useStyles } from '../../../styles/styles';
+
 export default function LoginForm() {
+  const { loginInputStyles } = useStyles();
   const [showPassword, setShowPassword] = React.useState<boolean>(false);
   const [loginCredentials, setLoginCredentials] = React.useState<{
     email: string, password: string
@@ -37,6 +40,7 @@ export default function LoginForm() {
         <TextField
           onChange={handleChange}
           value={loginCredentials.email}
+          className={loginInputStyles}
           type='text'
           name='email'
           fullWidth
@@ -71,6 +75,7 @@ export default function LoginForm() {
           onChange={handleChange}
           value={loginCredentials.password}
           type={showPassword ? 'text' : 'password'}
+          className={loginInputStyles}
           name='password'
           data-testid='password'
           fullWidth
