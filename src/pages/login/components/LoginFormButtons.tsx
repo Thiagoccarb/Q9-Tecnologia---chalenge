@@ -12,6 +12,7 @@ export default function LoginPage() {
       id='login-btn-container'
     >
       <CustomButton
+        type='submit'
         className={btn}
         style={{ 
           color: 'white',
