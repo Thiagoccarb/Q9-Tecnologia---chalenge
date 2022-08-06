@@ -12,16 +12,16 @@ export default function BreedsMenu() {
     { breed: string, list: string[] }
   >({ breed: '', list: [] });
 
-  const [, param] = pathname.split('/');
+  const [, breed] = pathname.split('/');
 
   const { list: picturesArr } = breedPictures;
 
   const handleShowBreedsMenu = () => setShowBreedsMenu(!showBreedsMenu);
 
   const getBreedList = React.useCallback(async () => {
-    const data = await fetchBreedList(param);
+    const data = await fetchBreedList(breed);
     setPictures(data);
-  }, [param]);
+  }, [breed]);
 
 
   const redirect = async ({ target }: any) => {
@@ -63,7 +63,7 @@ export default function BreedsMenu() {
           <span></span>
         </button>
       </section>
-      <Outlet />
+      <Outlet context={breed} />
 
       <Grid
         container
