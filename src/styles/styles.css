@@ -1,36 +1,3 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-#root {
-  height: 100vh;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-span {
-  font-weight: normal !important;
-  color: #3D3D3D;
-  font-family: sans-serif;
-  margin: 0;
-  padding: 0;
-  letter-spacing: 3px;
-}
-
-h1 {
-  font-size: 5vmin;
-}
-
-span {
-  font-size: 3vmin;
-}
-
 #login-btn-container {
   display: flex;
   align-items: center;
@@ -83,6 +50,14 @@ span {
   text-align: center;
 }
 
+.menu > ul {
+  -o-transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -ms-transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -moz-transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -webkit-transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
 .menu {
   position: fixed;
   top: 0;
@@ -124,6 +99,58 @@ span {
 }
 .menu .hamburger-menu span:nth-child(3) {
   top: 20px;
+}
+.menu > ul {
+  position: absolute;
+  top: 20%;
+  text-transform: uppercase;
+  left: 50%;
+  margin-left: -36px;
+  list-style: outside;
+  transform: translate(-400px);
+}
+.menu > ul.on {
+  transform: translate(0);
+}
+.menu > ul > li {
+  margin: 20px 0;
+}
+.menu > ul > li:hover {
+  cursor: pointer;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  height: 100vh;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+li,
+span {
+  font-weight: normal !important;
+  color: #3D3D3D;
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  letter-spacing: 3px;
+}
+
+h1 {
+  font-size: 5vmin;
+}
+
+span {
+  font-size: 3vmin;
 }
 
 /*# sourceMappingURL=styles.css.map */
