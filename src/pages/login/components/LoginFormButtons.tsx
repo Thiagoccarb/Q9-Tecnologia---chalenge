@@ -4,7 +4,11 @@ import { CustomButton } from '../../../genericComponents';
 
 import { useStyles } from '../../../styles/styles';
 
-export default function LoginPage() {
+interface IProps {
+  registerNewUser: (e: React.FormEvent<HTMLFormElement>) => null | Promise<any>
+}
+
+export default function LoginPage({ registerNewUser }: IProps) {
   const { btn } = useStyles();
   return (
     <Grid
@@ -14,18 +18,19 @@ export default function LoginPage() {
       <CustomButton
         type='submit'
         className={btn}
-        style={{ 
+        style={{
           color: 'white',
-          background: 'blue', 
+          background: 'blue',
         }}
       >
         login
       </CustomButton>
       <CustomButton
         className={btn}
-        style={{ 
+        onClick={registerNewUser}
+        style={{
           color: 'white',
-          background: 'green', 
+          background: 'green',
         }}
       >
         sign up
