@@ -11,6 +11,7 @@ export const useStyles = makeStyles({
   },
   btn: {
     padding: '15px',
+    width: '100%',
     fontSize: '3vmin',
     fontWeight: 700,
     borderRadius: '10px',

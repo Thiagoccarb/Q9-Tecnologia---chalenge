@@ -37,8 +37,10 @@ span {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 20px auto;
+  margin: auto;
   width: 80%;
+  position: relative;
+  top: 30px
 }
 
 #login-section {
@@ -52,8 +54,8 @@ span {
   border: 1px solid black;
   border-radius: 10px;
 
-  @media screen and (max-width: 500px) {
-    height: 80vw;
+  @media screen and (max-width: 400px) {
+    height: 350px;
   }
 
 }

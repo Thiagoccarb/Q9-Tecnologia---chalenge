@@ -57,7 +57,6 @@ export default function LoginForm() {
           flexDirection='column'
           margin='auto'
           width='80%'
-          rowGap={8}
         >
           <Grid
             item
