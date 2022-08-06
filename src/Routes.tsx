@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import { LoginPage, InitialPage } from './pages/login'
-import { Menu, BreedList } from './pages/BreedsMenu';
+import { BreedsMenu, BreedList } from './pages/BreedsMenu';
 
 
 const AppRoutes = () => {
@@ -11,7 +11,7 @@ const AppRoutes = () => {
       <Routes>
         <Route path="/" element={<InitialPage />} />
         <Route path="/login" element={<LoginPage />} />
-        <Route path="/" element={<Menu />} >
+        <Route path="/" element={<BreedsMenu />} >
           <Route path=":id" element={<BreedList />} />
         </Route>
       </Routes>

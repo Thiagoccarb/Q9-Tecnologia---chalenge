@@ -1,33 +1,37 @@
 import * as React from 'react';
 import Grid from '@mui/material/Grid';
-import { useNavigate, Outlet } from 'react-router-dom';
+import { useNavigate, Outlet, useLocation } from 'react-router-dom';
 
 import { fetchBreedList } from '../../API/list';
 
 export default function BreedsMenu() {
   const navigate = useNavigate();
+  const { pathname } = useLocation();
   const [showBreedsMenu, setShowBreedsMenu] = React.useState<boolean>(false);
   const [breedPictures, setPictures] = React.useState<
     { breed: string, list: string[] }
   >({ breed: '', list: [] });
 
+  const [, param] = pathname.split('/');
+
   const { list: picturesArr } = breedPictures;
 
   const handleShowBreedsMenu = () => setShowBreedsMenu(!showBreedsMenu);
 
-  const getBreedsList = async () => {
-    const data = await fetchBreedList();
+  const getBreedList = React.useCallback(async () => {
+    const data = await fetchBreedList(param);
     setPictures(data);
-  }
+  }, [param]);
+
 
   const redirect = async ({ target }: any) => {
     const { innerText: breedName } = target as HTMLElement;
-    navigate(`/breeds/${breedName.toLowerCase()}`)
+    navigate(`/${breedName.toLowerCase()}`)
   }
 
   React.useEffect(() => {
-    getBreedsList();
-  }, []);
+    getBreedList();
+  }, [getBreedList]);
 
   return (
     <>

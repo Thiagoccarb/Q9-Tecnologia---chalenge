@@ -1,2 +1,2 @@
-export { default as Menu } from './Menu';
+export { default as BreedsMenu } from './BreedsMenu';
 export { default as BreedList } from './BreedList';
