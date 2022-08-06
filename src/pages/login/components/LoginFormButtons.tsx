@@ -16,16 +16,6 @@ export default function LoginFormButtons({ registerNewUser }: IProps) {
       id='login-btn-container'
     >
       <CustomButton
-        type='submit'
-        className={btn}
-        style={{
-          color: 'white',
-          background: 'blue',
-        }}
-      >
-        login
-      </CustomButton>
-      <CustomButton
         className={btn}
         onClick={registerNewUser}
         style={{
@@ -33,7 +23,7 @@ export default function LoginFormButtons({ registerNewUser }: IProps) {
           background: 'green',
         }}
       >
-        sign up
+        sign up and go
       </CustomButton>
     </Grid>
   );
