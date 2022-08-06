@@ -63,6 +63,12 @@ export default function BreedList() {
       <section
         className={displayOverlay ? 'overlay on' : 'overlay'}
       >
+        <button
+          className='btn-close'
+        >
+          <span></span>
+          <span></span>
+        </button>
       </section>
     </>
   );
