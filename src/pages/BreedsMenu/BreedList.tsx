@@ -82,6 +82,12 @@ export default function BreedList() {
           <span></span>
           <span></span>
         </button>
+        <div
+          style={{
+            backgroundImage: 'url(' + selectedImage + ')',
+          }}
+        >
+        </div>
       </section>
     </>
   );
