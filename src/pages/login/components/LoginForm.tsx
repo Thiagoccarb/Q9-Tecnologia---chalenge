@@ -7,7 +7,7 @@ import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 import { InputAdornment } from '@mui/material';
 
 import { registerUser } from '../../../API/register';
-import { LoginFormButtons } from '.';
+import { SignUpBtn } from '.';
 import { useStyles } from '../../../styles/styles';
 
 export default function LoginForm() {
@@ -51,7 +51,7 @@ export default function LoginForm() {
           <span>Por favor, confira o email digitado e tente novamente</span>
         </div>
       }
-      <form style={{ width: '100%' }} onSubmit={validateEmail} >
+      <form style={{ width: '100%' }} onSubmit={registerNewUser} >
         <Grid
           container
           flexDirection='column'
@@ -94,9 +94,7 @@ export default function LoginForm() {
             />
           </Grid>
         </Grid>
-        <LoginFormButtons
-          registerNewUser={(e: React.FormEvent<HTMLFormElement>) => registerNewUser(e)}
-        />
+        <SignUpBtn />
       </form>
     </>
   );
