@@ -26,7 +26,7 @@ export default function LoginForm() {
     if (isValidEmail) {
       const { user: { token } } = await registerUser({ email });
       localStorage.setItem('token', token);
-      return navigate('/breeds')
+      return navigate('/chihuahua')
     }
     return null;
   }
