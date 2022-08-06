@@ -2,7 +2,7 @@ const { REACT_APP_API } = process.env;
 
 const token = localStorage.getItem('token') || '';
 
-export const fetchBreedsList = async (breed?: string ) => {
+export const fetchBreedList = async (breed?: string ) => {
   try {
     const URL = `${REACT_APP_API}/list?${breed}`;
 
