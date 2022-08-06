@@ -20,6 +20,9 @@ export default function BreedList() {
 
   const openOverlay = () => setOverlay(true);
 
+  const closeOverlay = () => setOverlay(false);
+
+
   React.useEffect(() => {
     getBreedList();
   }, [getBreedList]);
@@ -65,6 +68,7 @@ export default function BreedList() {
       >
         <button
           className='btn-close'
+          onClick={closeOverlay}
         >
           <span></span>
           <span></span>
