@@ -1,38 +1,3 @@
-@import 'variables.scss';
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-#root {
-  height: 100vh;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-span {
-  font-weight: normal !important;
-  color: $color-title;
-  font-family: $font;
-  margin: 0;
-  padding: 0;
-  letter-spacing: 3px;
-}
-
-h1 {
-  font-size: 5vmin;
-}
-
-span {
-  font-size: 3vmin;
-}
-
 #login-btn-container {
   display: flex;
   align-items: center;
