@@ -83,4 +83,47 @@ span {
   text-align: center;
 }
 
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 300px;
+  background: #e9e6e6;
+  box-shadow: rgba(0, 0, 0, 0.1) -2px 0px 15px;
+  border-top-right-radius: 40px;
+  border-bottom-right-radius: 40px;
+}
+.menu .hamburger-menu {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  top: 10%;
+  left: 50%;
+  margin-left: -15px;
+  background: transparent;
+  border: none;
+}
+.menu .hamburger-menu:hover {
+  cursor: pointer;
+}
+.menu .hamburger-menu span {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 5px;
+  background: black;
+  border-radius: 5px;
+  left: 0;
+}
+.menu .hamburger-menu span:nth-child(1) {
+  top: 0;
+}
+.menu .hamburger-menu span:nth-child(2) {
+  top: 10px;
+}
+.menu .hamburger-menu span:nth-child(3) {
+  top: 20px;
+}
+
 /*# sourceMappingURL=styles.css.map */
