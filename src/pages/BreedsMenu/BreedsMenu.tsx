@@ -63,34 +63,37 @@ export default function BreedsMenu() {
           <span></span>
         </button>
       </section>
-      <Outlet context={breed} />
-
       <Grid
         container
-        id='cards-container'
-        columnGap={0}
-        rowGap={2}
       >
-        {
-          picturesArr.map((picture, i) => (
-            <Grid
-              item
-              key={i}
-              xs={12}
-              sm={4}
-              md={3}
-              lg={3}
-            >
-              <div
-                className='thumb'
-                style={{
-                  backgroundImage: 'url(' + picture + ')',
-                }}
+        <Grid
+          container
+          id='cards-container'
+          columnGap={0}
+          rowGap={2}
+        >
+          <Outlet context={breed} />
+          {
+            picturesArr.map((picture, i) => (
+              <Grid
+                item
+                key={i}
+                xs={12}
+                sm={4}
+                md={3}
+                lg={3}
               >
-              </div>
-            </Grid>
-          ))
-        }
+                <div
+                  className='thumb'
+                  style={{
+                    backgroundImage: 'url(' + picture + ')',
+                  }}
+                >
+                </div>
+              </Grid>
+            ))
+          }
+        </Grid>
       </Grid>
     </>
   );
