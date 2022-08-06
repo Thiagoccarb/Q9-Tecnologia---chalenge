@@ -21,11 +21,12 @@ export default function LoginForm() {
 
   const checkEmail = () => emailRegex.test(email);
 
-  const registerNewUser = (e: React.FormEvent<HTMLFormElement>) => {
+  const registerNewUser = async (e: React.FormEvent<HTMLFormElement>) => {
     const isValidEmail = validateEmail(e);
     if (isValidEmail) {
-       registerUser({ email });
-       return navigate('/breeds')
+      const { user: { token } } = await registerUser({ email });
+      localStorage.setItem('token', token);
+      return navigate('/breeds')
     }
     return null;
   }
