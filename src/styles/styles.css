@@ -50,7 +50,7 @@
   text-align: center;
 }
 
-#cards-container #thumb, .menu > ul > li::before, .menu > ul {
+.menu > ul > li::before, .menu > ul {
   -o-transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   -ms-transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   -moz-transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -145,50 +145,6 @@
   transform: translateX(0);
 }
 
-#cards-container {
-  position: relative;
-  left: 300px;
-  height: max-content;
-  padding: 20px;
-  flex-wrap: wrap;
-  max-width: calc(100vw - 300px);
-}
-@media screen and (max-width: 1024px) {
-  #cards-container {
-    width: 100%;
-    left: 0;
-    max-width: 100vw;
-    justify-content: center;
-  }
-}
-#cards-container #thumb {
-  list-style: none;
-  width: 100%;
-  max-width: 350px;
-  height: 250px;
-  background-position: center;
-  background-size: 90% 90%;
-  background-repeat: no-repeat;
-}
-@media screen and (max-width: 600px) {
-  #cards-container #thumb {
-    height: 350px;
-  }
-}
-@media screen and (max-width: 600px) {
-  #cards-container #thumb {
-    height: 350px;
-  }
-}
-@media screen and (min-width: 1440px) {
-  #cards-container #thumb {
-    height: 400px;
-  }
-}
-#cards-container #thumb:hover {
-  background-size: 100% 100%;
-}
-
 * {
   box-sizing: border-box;
   margin: 0;
@@ -221,6 +177,14 @@ h1 {
 
 span {
   font-size: 3vmin;
+}
+
+#cards-container #thumb {
+  -o-transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -ms-transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -moz-transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -webkit-transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .title {
@@ -296,6 +260,50 @@ span {
 }
 .btn-close > span:nth-child(2) {
   transform: rotate(-45deg);
+}
+
+#cards-container {
+  position: relative;
+  left: 300px;
+  height: max-content;
+  padding: 20px;
+  flex-wrap: wrap;
+  max-width: calc(100vw - 300px);
+}
+@media screen and (max-width: 1024px) {
+  #cards-container {
+    width: 100%;
+    left: 0;
+    max-width: 100vw;
+    justify-content: center;
+  }
+}
+#cards-container #thumb {
+  list-style: none;
+  width: 100%;
+  max-width: 350px;
+  height: 250px;
+  background-position: center;
+  background-size: 90% 90%;
+  background-repeat: no-repeat;
+}
+@media screen and (max-width: 600px) {
+  #cards-container #thumb {
+    height: 350px;
+  }
+}
+@media screen and (max-width: 600px) {
+  #cards-container #thumb {
+    height: 350px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  #cards-container #thumb {
+    height: 400px;
+  }
+}
+#cards-container #thumb:hover {
+  background-size: 100% 100%;
 }
 
 /*# sourceMappingURL=styles.css.map */
