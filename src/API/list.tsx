@@ -4,7 +4,7 @@ const token = localStorage.getItem('token') || '';
 
 export const fetchBreedList = async (breed?: string ) => {
   try {
-    const URL = `${REACT_APP_API}/list?${breed}`;
+    const URL = `${REACT_APP_API}/list/?breed=${breed}`;
 
     const request = await fetch(
       URL,
