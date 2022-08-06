@@ -6,6 +6,7 @@ import { fetchBreedList } from '../../API/list';
 
 export default function BreedList() {
   const breed = useOutletContext<string>();
+  const [displayOverlay, setOverlay] = React.useState<boolean>(false);
   const [breedPictures, setPictures] = React.useState<
     { breed: string, list: string[] }
   >({ breed: '', list: [] });
@@ -16,6 +17,8 @@ export default function BreedList() {
     const data = await fetchBreedList(breed);
     setPictures(data);
   }, [breed]);
+
+  const openOverlay = () => setOverlay(true);
 
   React.useEffect(() => {
     getBreedList();
@@ -50,6 +53,7 @@ export default function BreedList() {
                 sx={{
                   backgroundImage: 'url(' + picture + ')',
                 }}
+                onClick={openOverlay}
               >
               </Grid>
             ))
@@ -57,7 +61,7 @@ export default function BreedList() {
         </Grid>
       </Grid>
       <section
-        className='overlay'
+        className={displayOverlay ? 'overlay on' : 'overlay'}
       >
       </section>
     </>
