@@ -4,11 +4,7 @@ import { CustomButton } from '../../../genericComponents';
 
 import { useStyles } from '../../../styles/styles';
 
-interface IProps {
-  registerNewUser: (e: React.FormEvent<HTMLFormElement>) => null | Promise<any>
-}
-
-export default function LoginFormButtons({ registerNewUser }: IProps) {
+export default function SignUpBtn() {
   const { btn } = useStyles();
   return (
     <Grid
@@ -16,8 +12,8 @@ export default function LoginFormButtons({ registerNewUser }: IProps) {
       id='login-btn-container'
     >
       <CustomButton
+        type='submit'
         className={btn}
-        onClick={registerNewUser}
         style={{
           color: 'white',
           background: 'green',
