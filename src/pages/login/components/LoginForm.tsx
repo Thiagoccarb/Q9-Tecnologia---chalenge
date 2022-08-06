@@ -1,5 +1,6 @@
 import * as React from 'react';
 import Grid from '@mui/material/Grid';
+import { useNavigate } from 'react-router-dom';
 import IconButton from '@mui/material/IconButton';
 import TextField from '@mui/material/TextField';
 import ClearOutlinedIcon from '@mui/icons-material/ClearOutlined';
@@ -11,6 +12,7 @@ import { SignUpBtn } from '.';
 import { useStyles } from '../../../styles/styles';
 
 export default function LoginForm() {
+  const navigate = useNavigate();
   const { loginInputStyles } = useStyles();
   const [error, setError] = React.useState<boolean>(false);
   const [email, setEmail] = React.useState<string>('');
@@ -22,7 +24,8 @@ export default function LoginForm() {
   const registerNewUser = (e: React.FormEvent<HTMLFormElement>) => {
     const isValidEmail = validateEmail(e);
     if (isValidEmail) {
-      return registerUser({ email });
+       registerUser({ email });
+       return navigate('/breeds')
     }
     return null;
   }
