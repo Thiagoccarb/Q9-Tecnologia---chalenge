@@ -1,9 +1,11 @@
 import * as React from 'react';
 import Grid from '@mui/material/Grid';
+import { useNavigate, Outlet } from 'react-router-dom';
 
 import { fetchBreedList } from '../../API/list';
 
 export default function BreedsMenu() {
+  const navigate = useNavigate();
   const [showBreedsMenu, setShowBreedsMenu] = React.useState<boolean>(false);
   const [breedPictures, setPictures] = React.useState<
     { breed: string, list: string[] }
@@ -18,6 +20,11 @@ export default function BreedsMenu() {
     setPictures(data);
   }
 
+  const redirect = async ({ target }: any) => {
+    const { innerText: breedName } = target as HTMLElement;
+    navigate(`/breeds/${breedName.toLowerCase()}`)
+  }
+
   React.useEffect(() => {
     getBreedsList();
   }, []);
@@ -30,10 +37,18 @@ export default function BreedsMenu() {
         <ul
           className={showBreedsMenu ? 'on' : ''}
         >
-          <li>chihuahua</li>
-          <li>husky</li>
-          <li>labrador</li>
-          <li>pug</li>
+          <li
+            onClick={redirect}
+          >chihuahua</li>
+          <li
+            onClick={redirect}
+          >husky</li>
+          <li
+            onClick={redirect}
+          >labrador</li>
+          <li
+            onClick={redirect}
+          >pug</li>
         </ul>
         <button
           className='hamburger-menu'
@@ -44,6 +59,8 @@ export default function BreedsMenu() {
           <span></span>
         </button>
       </section>
+      <Outlet />
+
       <Grid
         container
         id='cards-container'
