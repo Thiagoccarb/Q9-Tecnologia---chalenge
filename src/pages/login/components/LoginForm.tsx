@@ -6,6 +6,7 @@ import ClearOutlinedIcon from '@mui/icons-material/ClearOutlined';
 import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 import { InputAdornment } from '@mui/material';
 
+import { registerUser } from '../../../API/register';
 import { LoginFormButtons } from '.';
 import { useStyles } from '../../../styles/styles';
 
@@ -16,10 +17,21 @@ export default function LoginForm() {
 
   const emailRegex = /^[a-z0-9.]+@[a-z0-9]+\.[a-z]+.*?[a-z]+/;
 
+  const checkEmail = () => emailRegex.test(email);
+
+  const registerNewUser = (e: React.FormEvent<HTMLFormElement>) => {
+    const isValidEmail = validateEmail(e);
+    if (isValidEmail) {
+      return registerUser({ email });
+    }
+    return null;
+  }
+
   const validateEmail = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const isValidEmail = emailRegex.test(email);
+    const isValidEmail = checkEmail();
     setError(!isValidEmail);
+    return isValidEmail;
   }
 
   const handleChange = (e: React.SyntheticEvent) => {
@@ -83,7 +95,9 @@ export default function LoginForm() {
             />
           </Grid>
         </Grid>
-        <LoginFormButtons />
+        <LoginFormButtons
+          registerNewUser={(e: React.FormEvent<HTMLFormElement>) => registerNewUser(e)}
+        />
       </form>
     </>
   );
