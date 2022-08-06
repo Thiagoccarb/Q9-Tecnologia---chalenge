@@ -69,6 +69,14 @@
   border-top-right-radius: 40px;
   border-bottom-right-radius: 40px;
 }
+@media screen and (max-width: 1024px) {
+  .menu {
+    height: 250px;
+    width: 100%;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+}
 .menu .hamburger-menu {
   position: relative;
   width: 30px;
