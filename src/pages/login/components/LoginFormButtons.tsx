@@ -8,7 +8,7 @@ interface IProps {
   registerNewUser: (e: React.FormEvent<HTMLFormElement>) => null | Promise<any>
 }
 
-export default function LoginPage({ registerNewUser }: IProps) {
+export default function LoginFormButtons({ registerNewUser }: IProps) {
   const { btn } = useStyles();
   return (
     <Grid
