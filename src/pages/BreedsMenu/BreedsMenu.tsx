@@ -46,7 +46,7 @@ export default function BreedsMenu() {
           <span></span>
         </button>
       </section>
-      <Outlet context={breed} />
+      <Outlet context={{ data: { breed, showBreedsMenu } }} />
     </>
   );
 }
