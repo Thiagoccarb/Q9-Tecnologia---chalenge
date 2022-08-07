@@ -51,6 +51,7 @@ export default function LoginForm() {
         error
         && <div
           className='error'
+          data-testid='warning'
         >
           <span>Por favor, confira o email digitado e tente novamente</span>
         </div>
