@@ -71,7 +71,7 @@
 }
 @media screen and (max-width: 1024px) {
   .menu {
-    height: 250px;
+    height: 40px;
     width: 100%;
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
@@ -144,6 +144,12 @@
 }
 .menu > ul > li:hover::before {
   transform: translateX(0);
+}
+
+@media screen and (max-width: 1024px) {
+  .menu.on {
+    height: 250px;
+  }
 }
 
 * {
