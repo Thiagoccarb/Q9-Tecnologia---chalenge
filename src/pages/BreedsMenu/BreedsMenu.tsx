@@ -19,7 +19,7 @@ export default function BreedsMenu() {
   return (
     <>
       <section
-        className='menu'
+        className={showBreedsMenu ? 'menu on' : 'menu'}
       >
         <ul
           className={showBreedsMenu ? 'on' : ''}
@@ -38,7 +38,7 @@ export default function BreedsMenu() {
           >pug</li>
         </ul>
         <button
-          className='hamburger-menu'
+          className={showBreedsMenu ? 'hamburger-menu on' : 'hamburger-menu'}
           onClick={handleShowBreedsMenu}
         >
           <span></span>
