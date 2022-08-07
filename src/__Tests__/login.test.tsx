@@ -1,4 +1,9 @@
-import { screen, fireEvent } from '@testing-library/react';
+import * as React from 'react';
+import { screen, fireEvent, render } from '@testing-library/react';
+import userEvent from "@testing-library/user-event";
+import { Router } from 'react-router-dom'
+import { createMemoryHistory } from 'history'
+
 import { renderWithRouter } from "./setupTests";
 import { LoginPage } from '../pages/login';
 
@@ -103,5 +108,36 @@ describe('<loginPage />', () => {
     fireEvent.click(signUpButton);
 
     expect(global.fetch).toHaveBeenCalledTimes(1);
+  });
+  it('Should rediret to /chihuahua route after a succesful login', async () => {
+
+    const user = userEvent.setup();
+    global.fetch = jest.fn(() =>
+      Promise.resolve({
+        json: () => Promise.resolve({
+          user: {
+            _id: 'id',
+            email: 'test@test.com',
+            token: 'token',
+          }
+        }),
+      })
+    ) as jest.Mock;
+
+    const history = createMemoryHistory();
+    render(
+      <Router location={history.location} navigator={history}>
+        <LoginPage />
+      </Router>
+    );
+
+    const emailInput = screen.getByLabelText(/email/i);
+    fireEvent.change(emailInput, { target: { value: 'test@test.com' } });
+
+    const signUpButton = screen.getByRole('button', { name: /sign up and go/i });
+    await user.click(signUpButton);
+
+    expect(history.location.pathname).toBe('/chihuahua');
+
   });
 });
