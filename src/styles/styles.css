@@ -203,6 +203,12 @@ span {
 }
 @media screen and (max-width: 1024px) {
   .title {
+    margin: 60px 0 0 0;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .title.mobile {
     margin: 280px 0 0 0;
   }
 }
