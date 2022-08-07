@@ -11,7 +11,7 @@ export default function BreedsMenu() {
 
   const handleShowBreedsMenu = () => setShowBreedsMenu(!showBreedsMenu);
 
-  const redirect = async ({ target }: any) => {
+  const redirect = async ({ target }: React.SyntheticEvent) => {
     const { innerText: breedName } = target as HTMLElement;
     navigate(`/${breedName.toLowerCase()}`)
   }
