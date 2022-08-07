@@ -5,7 +5,9 @@ import { useOutletContext } from 'react-router-dom';
 import { fetchBreedList } from '../../API/list';
 
 export default function BreedList() {
-  const breed = useOutletContext<string>();
+  const { data: { breed, showBreedsMenu } } = useOutletContext<
+    { data: { breed: string, showBreedsMenu: string } }
+  >();
   const [displayOverlay, setOverlay] = React.useState<boolean>(false);
   const [selectedImage, setImage] = React.useState<string>('');
 
@@ -42,7 +44,7 @@ export default function BreedList() {
         container
       >
         <h1
-          className='title'
+          className={showBreedsMenu ? 'title mobile' : 'title'}
         >{breed}</h1>
         <Grid
           container
