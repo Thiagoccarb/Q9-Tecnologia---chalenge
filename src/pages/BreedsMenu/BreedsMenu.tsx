@@ -22,23 +22,33 @@ export default function BreedsMenu() {
         className={showBreedsMenu ? 'menu on' : 'menu'}
       >
         <ul
+          data-testid='menu'
           className={showBreedsMenu ? 'on' : ''}
         >
           <li
+            data-testid='breed'
+
             onClick={redirect}
           >chihuahua</li>
           <li
+            data-testid='breed'
+
             onClick={redirect}
           >husky</li>
           <li
+            data-testid='breed'
+
             onClick={redirect}
           >labrador</li>
           <li
+            data-testid='breed'
+
             onClick={redirect}
           >pug</li>
         </ul>
         <button
           className={showBreedsMenu ? 'hamburger-menu on' : 'hamburger-menu'}
+          data-testid='hamburger-menu'
           onClick={handleShowBreedsMenu}
         >
           <span></span>
