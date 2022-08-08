@@ -23,7 +23,7 @@ export default function BreedList() {
     const data = await fetchBreedList(breed);
     setPictures(data);
     setTimeout(() => setLoading(false), 500);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [breed]);
 
   const openOverlay = () => setOverlay(true);
@@ -95,6 +95,7 @@ export default function BreedList() {
               <span></span>
             </button>
             <div
+              data-testid='card'
               style={{
                 backgroundImage: 'url(' + selectedImage + ')',
               }}
